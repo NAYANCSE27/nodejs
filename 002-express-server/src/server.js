@@ -8,4 +8,4 @@ server.listen(port, () => {
   console.log(`Server running at http://localhost:${port}/`);
 });
 
-server.use("/api", router);
+router.configureRoutes(server);

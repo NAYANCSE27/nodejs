@@ -1,17 +1,12 @@
 const { Router } = require("express");
+const Controller = require("./controller");
 
 const router = Router();
 
-router.get("/hello", (req, res) => {
-  res.send("Hello World");
-});
+router.get("/me", Controller.getUser);
 
-router.get("/hola", (req, res) => {
-  res.send("Hola Mundo");
-});
+function configureRoutes(server) {
+  server.use("/api", router);
+}
 
-router.get("/me", (req, res) => {
-  res.status(200).json({ name: "John Doe", age: 30, location: "New York" });
-});
-
-module.exports = router;
+module.exports = { configureRoutes };
