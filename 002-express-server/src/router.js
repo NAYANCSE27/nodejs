@@ -5,8 +5,6 @@ const router = Router();
 
 router.get("/me", Controller.getUser);
 
-function configureRoutes(server) {
-  server.use("/api", router);
-}
+router.get("/me/:id", Controller.getUserById);
 
-module.exports = { configureRoutes };
+module.exports = router;
