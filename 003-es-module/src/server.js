@@ -1,4 +1,5 @@
 import express from 'express';
+import { router } from './router.js';
 
 const port = 5000;
 
@@ -8,6 +9,4 @@ app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
 
-app.get('/test', (req, res) => {
-  res.status(200).send('Hello World');
-});
+app.use('', router);
