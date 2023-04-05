@@ -10,4 +10,4 @@ router.get('/me', (req, res) => {
     res.status(200).send('Hello Nayan');
 });
 
-export { router };
+export { router }; 
