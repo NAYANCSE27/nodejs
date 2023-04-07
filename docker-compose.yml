@@ -6,4 +6,19 @@ services:
       dockerfile: Dockerfile
     ports:
       - "5000:5000" # 5000 is the port of the container, 5000 is the port of the host
-      
+
+  mongo-crud:
+    build: 
+      context: 004-mongo-crud
+      dockerfile: Dockerfile
+    container_name: mongo-crud
+    depends_on:
+      - mongodb
+    ports:
+      - "5002:5000"
+    # restart: on failure
+  
+  mongodb:
+    image: mongo
+    ports:
+      - "27017:27017"
