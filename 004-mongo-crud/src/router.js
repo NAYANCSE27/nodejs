@@ -1,10 +1,9 @@
-import { Router } from "express";
-import { ProductConroller } from "./controllers/index.js";
+const { Router } = require("express");
+
+const { createProduct } = require("./controllers/productController");
 
 const router = Router();
 
-router.post('/products', ProductConroller.createProduct);
+router.post("/products",createProduct);
 
-export function configureRouter(app) {
-  app.use('api/', router);
-}
+module.exports = { router, };

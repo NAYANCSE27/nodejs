@@ -1,1 +1,5 @@
-export * as ProductConroller from './productController.js';
+const ProductConroller = require('./productController');
+
+module.exports = {
+    ProductConroller,
+};
