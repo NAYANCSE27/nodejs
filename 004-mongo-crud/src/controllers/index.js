@@ -1,0 +1,1 @@
+export * as ProductConroller from './productController.js';

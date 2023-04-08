@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 
 import config from "./config.js";
+import { configureRouter } from "./router.js";
 
 async function connectMongoDB() {
     try{
@@ -20,6 +21,7 @@ function initializeServer() {
   });
 
   connectMongoDB();
+  configureRouter(app);
 }
 
 initializeServer();
